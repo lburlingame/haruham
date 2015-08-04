@@ -15,8 +15,8 @@
     <div id="content">
         <div class="container">
             <div class="centered" id="login_section">
-                <asp:Label ID="errLbl" runat="server" Text=""></asp:Label>
                 <img id="user_img" src="assets/images/default_user.svg" onerror="this.onerror=null; this.src='assets/images/default_user.png'">
+                <asp:Label ID="errLbl" runat="server" Text="" ClientIDMode="Static"></asp:Label>
                 <asp:TextBox class="blk textbox" PlaceHolder="Email" ID="Email" spellcheck="false" onfocus="this.value = this.value" ClientIDMode="Static" runat="server"></asp:TextBox>
                 <asp:TextBox class="blk textbox" PlaceHolder="Password" ID="Password" TextMode="password" ClientIDMode="Static" runat="server"></asp:TextBox>
                 <asp:Button class="blk button" ID="Submit" ClientIDMode="Static" runat="server" Text="Sign In" OnClick="Submit_Click"/>

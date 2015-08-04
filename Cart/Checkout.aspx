@@ -27,9 +27,10 @@
             </div>
             <div class="checkout-container border">
                 <asp:Label CssClass="Title" runat="server" Text="Shipping Information"></asp:Label>
+                <asp:TextBox ID="AddressName" ClientIDMode="Static" runat="server"></asp:TextBox>
 
                 <div ID="EmailLabel" class="label" runat="server">Email</div>
-                <asp:RequiredFieldValidator CssClass="validator" runat="server" ErrorMessage="*" ControlToValidate="Email"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="EmailValidator" CssClass="validator" runat="server" ErrorMessage="*" ControlToValidate="Email"></asp:RequiredFieldValidator>
                 <asp:TextBox ID="Email" CssClass="textbox" runat="server"></asp:TextBox>
 
                 <div class="label">Name</div>

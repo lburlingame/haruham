@@ -77,7 +77,6 @@
 	<footer>
 		<div id="footer-body">
 		    <button id="click_me"></button>
-            <p>by Leland Burlingame</p>
             <p>lelandburlingame@eagles.ewu.edu</p>
    		</div>
 	</footer>

@@ -102,3 +102,21 @@
     float: left;
     width: 20px;
 }
+
+#AddressName {
+    width: 200px;
+    display: block;
+    margin-bottom: 25px;
+    border: none;
+    background-color: transparent;
+    height: 30px;
+    font-size: 25px;
+}
+
+#AddressName:hover {
+
+}
+
+#AddressName:focus {
+    background-color: white;
+}

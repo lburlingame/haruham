@@ -1,4 +1,4 @@
-form { 
+form {
   background: url(../images/tea.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -88,4 +88,9 @@ form {
 
 #scroll_to_top {
 	opacity: .7;
+}
+
+#errLbl {
+    display: block;
+    text-align: center;
 }

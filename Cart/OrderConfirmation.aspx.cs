@@ -9,11 +9,7 @@ public partial class OrderConfirmation : System.Web.UI.Page
         {
             Order.Text = "Order ham-" + Session["OrderNum"] + " has been processed.";
             Label.Text = "An email has been sent to confirm your order.";
-            Session["OrderNum"] = null;
         }
-        else
-        {
-            Response.Redirect("TeaShop.aspx");
-        }
+
     }
 }

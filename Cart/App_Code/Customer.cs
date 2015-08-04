@@ -8,21 +8,17 @@ using System.Web;
 /// </summary>
 public class Customer
 {
-    public String Email;
-    public String Name;
-    public String Street;
-    public String City;
-    public String State;
-    public String Zip;
-
-	public Customer(String email, String name, String street, String city, String state, String zip)
-	{
-	    this.Email = email;
-	    this.Name = name;
-	    this.Street = street;
-	    this.City = city;
-	    this.State = state;
-	    this.Zip = zip;
-	}
+    public string ID;
+    public string Email;
+    public bool Verified;
+    public List<Address> Addresses;
+     
+    public Customer(string ID, string Email, bool Verified)
+    {
+        this.ID = ID;
+        this.Email = Email;
+        this.Verified = Verified;
+        Addresses = new List<Address>();
+    }
 
 }
