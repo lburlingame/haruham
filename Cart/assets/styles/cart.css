@@ -1,0 +1,24 @@
+.container {
+	width: 800px;
+}
+
+#cart_section {
+	min-height: 360px;
+}
+
+.remove_button {
+	border: none;
+	background-color: transparent;
+	color: rgb(14, 16, 17);
+	padding-botom: 10px;
+	border-radius: 5px;
+}
+
+.remove_button:hover {
+	color: rgb(173, 171, 171);
+	font-size: 18px;
+}
+
+.remove_button:focus {
+	outline: none;
+}

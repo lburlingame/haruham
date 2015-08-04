@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="sc.master.cs" Inherits="scmaster" %>
+
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en">
+
+    <title>      
+        <asp:ContentPlaceHolder ID="title_holder" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <link rel="shortcut icon" href="assets/images/hamicon.ico">
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400" rel="stylesheet" type="text/css" />
+    <link href="assets/styles/default.css" rel="stylesheet">
+    <link href="assets/styles/header.css" rel="stylesheet">
+    <link href="assets/styles/footer.css" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="styles" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+
+    <form id="form" runat="server">
+
+        <div id="banner">
+            <img id="left-ham" src="assets/images/hamleft.png" alt="ham">
+            <label class="banner-text upper first" id="banner-title">Haruham</label>
+            <label class="banner-text" id="banner-welcome">へようこそ</label>
+            <img id="right-ham" src="assets/images/hamright.png" alt="ham">
+        </div>
+        <header id="nav-bar" role="banner">
+		    <div id="nav-area">
+			    <ul id="main-nav">
+				    <li><a href="TeaShop.aspx">Green Teas</a>
+				    </li><li><a href="About.aspx">About</a></li>
+			    </ul>
+
+			    <ul id="account-nav">
+				    <li><a href="#/" runat="server" class="nav_button" ID="account_button"><asp:Image ID="account_button_img" runat="server" /></a></li>
+                    <li><a href="ViewCart.aspx" class="nav_button" id="cart_button"><asp:Label ID="cart_num" runat="server" Text="0"></asp:Label><img src="assets/images/cart.svg" onerror="this.onerror=null; this.src='assets/images/cart.png'"></a></li>
+				    <li><a href="#/" class="nav_button" id="help_button">?</a></li>
+			    </ul>
+		    </div>
+	    </header>
+    
+        <div id="account_menu" class="header-menu">
+		    <div class="menu_header">
+			    <asp:Image ID="account_menu_img" runat="server" />
+                <asp:Label ID="DisplayName" runat="server" Text=""></asp:Label>
+		    </div>
+		    <ul class="menu_select" role="menu">
+	  		    <li><a href="Login.aspx">View Account</a></li>
+	  		    <li><a href="upload.php">Wishlist</a></li>
+                <li><asp:LinkButton ID="logout" OnClick="logout_Click" runat="server" CausesValidation="False">Sign out</asp:LinkButton></li>
+		    </ul>
+	    </div>
+
+	    <div id="help_menu" class="header-menu">
+		    <ul class="menu_select" role="menu">
+	  		    <li><a href="#/">FAQ</a></li>	
+	  		    <li><a href="#/">Help</a></li>
+		    </ul>
+	    </div>
+
+
+        <asp:ContentPlaceHolder id="content_holder" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </form>
+    
+    <button id="scroll_to_top">^</button>
+
+	<footer>
+		<div id="footer-body">
+		    <button id="click_me"></button>
+            <p>by Leland Burlingame</p>
+            <p>lelandburlingame@eagles.ewu.edu</p>
+   		</div>
+	</footer>
+
+    <script src="assets/scripts/jquery-2.1.3.js"></script>
+    <script src="assets/scripts/default.js"></script>
+    <script src="assets/scripts/header.js"></script>
+    <script src="assets/scripts/footer.js"></script>
+    <asp:ContentPlaceHolder id="scripts" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</body>
+</html>

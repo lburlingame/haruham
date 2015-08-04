@@ -1,0 +1,12 @@
+#about_section {
+	font-size: 25px;
+	font-family: "Open Sans Condensed";
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 15px;
+	min-height: 300px;
+}
+
+#about_section a {
+	color:#04B50D;
+}

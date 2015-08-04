@@ -1,0 +1,10 @@
+.button {
+	background-color: #E5E4E4;
+	border: 1px solid black;
+	width: 100px !important;
+	font-size: 13px !important;
+}
+
+.textbox {
+	width: 88px !important;
+}
