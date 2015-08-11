@@ -23,16 +23,19 @@ public partial class CreateAccount : System.Web.UI.Page
     {
         if (Page.IsValid)
         {
-            var salt = Crypt.getNewSalt(32);
-            string saltStore = Convert.ToBase64String(salt);
+            var salt = Crypt.getNewSalt(16);
 
-            byte[] hashValue;
+            byte[] hash;
             using (var pbkdf2 = new Rfc2898DeriveBytes(Password.Text, salt, 24000))
             {
-                hashValue = pbkdf2.GetBytes(64);
+                hash = pbkdf2.GetBytes(20);
             }
 
-            string hash = Convert.ToBase64String(hashValue);
+
+            string hashStr = Convert.ToBase64String(hash);
+
+            string saltStr = Convert.ToBase64String(salt);
+
 
             try
             {
@@ -46,7 +49,7 @@ public partial class CreateAccount : System.Web.UI.Page
                     using (OleDbCommand cmd = new OleDbCommand(cmdStr, conn))
                     {
                         cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("[Password]", saltStore + hash);
+                        cmd.Parameters.AddWithValue("[Password]", saltStr + hashStr);
                         cmd.Parameters.AddWithValue("Email", Email.Text);
 
                         conn.Open();
@@ -62,7 +65,7 @@ public partial class CreateAccount : System.Web.UI.Page
                         {
                             cmd.CommandType = CommandType.Text;
                             cmd.Parameters.AddWithValue("Email", Email.Text);
-                            cmd.Parameters.AddWithValue("[Password]", saltStore + hash);
+                            cmd.Parameters.AddWithValue("[Password]", saltStr + hashStr);
                             //  cmd.Parameters.AddWithValue("Email", Email.Text);
 
                             conn.Open();

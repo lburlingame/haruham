@@ -77,20 +77,20 @@ public partial class Login : System.Web.UI.Page
                 {
                     string upw = reader["Password"].ToString();
 
-                    string saltStore = upw.Substring(0, 44);
-                    string hash = upw.Substring(44);
+                    string saltStr = upw.Substring(0, 24);
+                    string hashStr = upw.Substring(24);
 
-                    var salt = Convert.FromBase64String(saltStore);
+                    var salt = Convert.FromBase64String(saltStr);
 
-                    byte[] hashValue;
+                    byte[] hash;
                     using (var pbkdf2 = new Rfc2898DeriveBytes(Password.Text, salt, 24000))
                     {
-                        hashValue = pbkdf2.GetBytes(64);
+                        hash = pbkdf2.GetBytes(20);
                     }
 
-                    if (Convert.ToBase64String(hashValue).Equals(hash))
+                    if (Convert.ToBase64String(hash).Equals(hashStr))
                     {
-                        cust = new Customer(reader["UserID"].ToString(), Email.Text, Convert.ToBoolean(reader["UserID"]));
+                        cust = new Customer(reader["UserID"].ToString(), Email.Text, Convert.ToBoolean(reader["Verified"]));
                     }
                 }
             }
